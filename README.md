@@ -13,50 +13,75 @@
 
 ### Requerimientos funcionales:
 1. Control de Acceso:
+   
 ○ Permitir el acceso autorizado de estudiantes, personal docente y
 administrativo mediante escáneres de huella dactilar.
+
 ○ Registrar la hora y el lugar de entrada/salida de cada individuo.
+
 ○ Generar alertas en caso de acceso no autorizado o intentos de
 intrusión.
-2. Gestión de Visitantes:
+
+3. Gestión de Visitantes:
+   
 ○ Registrar la información de los visitantes y dar zip para su localización.
+
 ○ Limitar el acceso de los visitantes a áreas específicas según las
 políticas de seguridad de la institución.
-3. Aplicación Móvil para Tutores:
+
+5. Aplicación Móvil para Tutores:
+   
 ○ Permitir acceder a información académica y de seguridad de los
 estudiantes.
+
 ○ Enviar notificaciones sobre eventos importantes, ausencias o
 emergencias tales como fallos de internet y luz,relacionadas con los
 estudiantes.
+
 ○ Facilitar la comunicación entre los tutores y el personal de la
 institución.
 
 
 ### Requerimientos no funcionales:
+
 1. Seguridad:
+   
 ○ Garantizar la integridad y confidencialidad de los datos almacenados y
 transmitidos.
+
 ○ Cumplir con los estándares de seguridad de la industria para proteger
 contra intrusiones y ataques cibernéticos.
-2. Escalabilidad:
+
+3. Escalabilidad:
+   
 ○ Diseñar el sistema para que pueda crecer y adaptarse a medida que la
 institución educativa se expanda o cambie.
-3. Usabilidad:
+
+5. Usabilidad:
+   
 ○ Desarrollar una interfaz intuitiva y fácil de usar tanto para el personal
 administrativo como para los usuarios finales.
+
 ○ Proporcionar capacitación adecuada para garantizar que el personal
 pueda utilizar eficazmente todas las funciones del sistema.
-4. Disponibilidad:
+
+7. Disponibilidad:
+   
 ○ Garantizar que el sistema esté disponible en todo momento, con
 tiempos de inactividad mínimos para mantenimiento o actualizaciones
 planificadas.
-5. Compatibilidad:
+
+9. Compatibilidad:
+    
 ○ Asegurar que el sistema sea compatible con una variedad de
 dispositivos y plataformas en windows, incluidos dispositivos móviles y
 navegadores web populares.
-6. Rendimiento:
+
+11. Rendimiento:
+    
 ○ Optimizar el rendimiento del sistema para garantizar tiempos de
 respuesta rápidos, especialmente durante situaciones de emergencia
 como falta de energía eléctrica, internet, etc.
+
 ○ Minimizar el consumo de recursos para garantizar un funcionamiento
 eficiente y escalable del sistema.
