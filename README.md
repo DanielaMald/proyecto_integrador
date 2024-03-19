@@ -3,11 +3,11 @@
 
 
 
-| Integrantes |
-|-------------|
-|Dulce Daniela Maldonado Moctezuma |
-| Anhuar Fernando Martinez Islas |
-| Brenda Azucena Becerra Cruz |
-| Josandy Danae Barqueras Andrade |
+| Integrantes |Matricula |
+|-------------|-----------|
+|Dulce Daniela Maldonado Moctezuma | 1722110052 |
+| Anhuar Fernando Martinez Islas | 1722110 |
+| Brenda Azucena Becerra Cruz | 1722110 |
+| Josandy Danae Barqueras Andrade | 1722110078 |
 
 
