@@ -1,6 +1,7 @@
 # FingerPass 3.0
 ## Repositorio del proyecto integrador del quinto cuatrimestre 
 
+### El proposito de este proyecto es Mejorar la seguridad en el acceso a las instituciones educativas mediante dispositivos IoT ,una aplicación web para la administración de la plataforma y una aplicación móvil para usuarios con la finalidad de disminuir incidentes en las instituciones.
 
 
 | Integrantes |Matricula |
