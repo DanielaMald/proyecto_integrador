@@ -11,7 +11,7 @@
 | Brenda Azucena Becerra Cruz | 1722110 |
 | Josandy Danae Barqueras Andrade | 1722110078 |
 
-Requerimientos funcionales:
+### Requerimientos funcionales:
 1. Control de Acceso:
 ○ Permitir el acceso autorizado de estudiantes, personal docente y
 administrativo mediante escáneres de huella dactilar.
@@ -32,7 +32,7 @@ estudiantes.
 institución.
 
 
-Requerimientos no funcionales:
+### Requerimientos no funcionales:
 1. Seguridad:
 ○ Garantizar la integridad y confidencialidad de los datos almacenados y
 transmitidos.
