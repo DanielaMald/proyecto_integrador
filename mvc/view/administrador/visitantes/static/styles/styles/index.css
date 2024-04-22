@@ -1,0 +1,88 @@
+/* Estilo para el texto */
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.center ul {
+    list-style-type: none; /* Elimina la lista de puntos */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+}
+    
+.center ul li a {
+    color: rgb(0, 0, 0); /* Cambia el color del texto a blanco */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    font-size: 30px;
+}
+
+.center > div {
+    margin: 0 40px; /* Ajusta el margen entre los dos cuadros según sea necesario */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    min-height: 100vh;
+    background: #83B5F1;
+    background: ( #83B5F1);
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.site-header {
+    text-align: center;
+    flex-direction: column;
+    padding: 30px;
+    color: #000000;
+    margin-bottom: 40px;
+}
+
+.site-header nav {
+    line-height: 30px;
+}
+
+.site-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: right;
+}
+
+.site-header nav ul li {
+    margin-right: 10px;
+}
+
+/* Estilos del botón */
+.button {
+    position: relative;
+    width: 210px;
+    height: 80px;
+    background-color: #3FABAF;
+    display: flex;
+    align-items: center;
+    color: rgb(7, 7, 7);
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 30px;
+    gap: 30px;
+    border-radius: 400px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold; 
+}
+
+
+/* Estilos para enlaces */

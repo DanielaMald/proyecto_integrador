@@ -1,0 +1,82 @@
+body {
+    background-color:#4ed7db;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.site-header {
+    background-color: #4ed7db;
+    padding: 10px;
+}
+
+.site-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-header nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.content {
+    margin: 20px;
+}
+
+#profile-container {
+    background-color: #4ed7db;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#profile-container form {
+    margin-bottom: 20px;
+}
+
+#profile-container form div {
+    margin-bottom: 10px;
+}
+
+#profile-container form label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+#profile-container form input[type="text"] {
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
+    border: none;
+}
+
+#profile-container form button {
+    padding: 5px 10px;
+    border: none;
+    background-color:#4ed7db;
+    color: white;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+#profile-container form button:hover {
+    background-color:#4ed7db;
+}
+
+#profile-container div {
+    margin-bottom: 10px;
+}
+
+.button {
+    background-color:#4ed7db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #888;
+}

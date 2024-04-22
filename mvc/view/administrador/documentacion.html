@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    html,body {
+     position: relative;
+     min-height: 100vh;
+     background-color: #E1E8EE;	
+     
+     font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+ }
+     .navbar {
+         background-color: #333;
+         overflow: hidden;
+     }
+     
+     .navbar a {
+         float: left;
+         color: white;
+       
+         vertical-align:text-top;
+         padding: 14px 16px;
+         text-decoration: none;
+         font-size: 17px;
+     }
+     
+     .navbar a:hover {
+         background-color: #ddd;
+         color: black;
+     }
+     .center {
+  margin: auto;
+  background:aliceblue;
+  width: 66%;
+}
+ </style>
+<body>
+    <div class="navbar">
+        
+        <a href="padres_familia.html">Padres de familia</a>
+        <a href="pagos_aceptados.html">Pagos</a>
+
+    </div>
+    <table class="center" >
+        <thead>
+            <tr>
+                <th>id documento</th>
+                <th>id estudiante</th>
+                <th>tipo documento</th>
+                <th>fecha emision</th>
+            </tr>
+            <tr><td></td><td></td></tr>
+        </thead>
+        <tbody>
+            <tr align="center">
+                <td>001</td>
+                <td>001</td>
+                <td>Certificado de notas</td>
+                <td>2023-07-12</td>
+                <td><a href="#" onclick="window.open('file:///D:/Papeles%20viaje/PERMISO%20BRIVE%20TI32.pdf')">Ver documento</a></td>
+            </tr>
+            <tr align="center">
+                <td>002</td>
+                <td>002</td>
+                <td>Certificado de asistencia</td>
+                <td>2023-07-12</td>
+                <td><a href="#" onclick="window.open('file:///D:/Papeles%20viaje/ffdd6e953edc45958dd568ddfc826e99.pdf')">Ver documento</a></td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

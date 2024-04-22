@@ -1,0 +1,76 @@
+/* Estilos generales */
+body {
+    background-color: #83B5F1;
+    color: white; /* Color de letra */
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto; /* Centrar el contenido horizontalmente */
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: black; /* Color de letra de la tabla */
+    background-color: #4C82BD; /* Fondo blanco */
+}
+
+th, td {
+    padding: 12px; /* Aumentar el padding para mejorar la apariencia */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #8dbcee;
+    color: white; /* Color de letra de las cabeceras */
+}
+
+button {
+    background-color: #3FABAF; /* Color de fondo del botón */
+    color: white; /* Color de letra del botón */
+    border: none;
+    padding: 12px 24px; /* Aumentar el padding para mejorar la apariencia */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #2E7B7F; /* Color de fondo del botón al pasar el mouse */
+}
+
+/* Estilos para el botón "Registrar Asistencia" */
+input[type="submit"] {
+    background-color: #3FABAF; /* Fondo azul fuerte */
+    color: white; /* Color de letra del botón */
+    border: none;
+    padding: 12px 24px; /* Aumentar el padding para mejorar la apariencia */
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    float: right; /* Ajustar a la derecha */
+    margin-top: 20px; /* Espacio entre el botón y el contenido anterior */
+}
+
+input[type="submit"]:hover {
+    background-color: #00346E; /* Color de fondo del botón al pasar el mouse */
+}
+
+/* Estilos para los selects */
+select {
+    padding: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 12px;
+    width: 10%;
+    margin-bottom: 10px;
+}
+
+/* Estilo cuando el select está enfocado */
+select:focus {
+    border-color: #007BFF; /* Cambia el color del borde cuando está enfocado */
+    outline: none; /* Quita el contorno predeterminado */
+}

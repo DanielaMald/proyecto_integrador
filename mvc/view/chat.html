@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat y Comentarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1, h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 80px);
+            height: 40px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            height: 40px;
+            padding: 0 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        select {
+            width: 100%;
+            height: 40px;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .messages {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        .message {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chat y Comentarios en Tiempo Real</h1>
+        <div class="messages" id="messageContainer"></div>
+        <input type="text" id="messageInput" placeholder="Escribe tu mensaje...">
+        <button id="sendMessageButton">Enviar Mensaje</button>
+        <h2>Comentarios para Alumnos</h2>
+        <select id="studentSelect">
+            <option value="">Seleccionar alumno</option>
+            <!-- Opciones de alumnos se llenarán dinámicamente -->
+        </select>
+        <button id="sendCommentButton">Enviar Comentario</button>
+        <h2>Asignaturas del Profesor</h2>
+        <select id="subjectSelect">
+            <option value="">Seleccionar asignatura</option>
+            <!-- Opciones de asignaturas se llenarán dinámicamente -->
+        </select>
+    </div>
+
+    <script>
+        // Función para crear elementos de opción para el select de alumnos
+        const createStudentOptions = () => {
+            const students = ['Estudiante 1', 'Estudiante 2', 'Estudiante 3'];
+            const studentSelect = document.getElementById('studentSelect');
+            students.forEach(student => {
+                const option = document.createElement('option');
+                option.text = student;
+                option.value = student;
+                studentSelect.appendChild(option);
+            });
+        };
+
+        // Función para crear elementos de opción para el select de asignaturas
+        const createSubjectOptions = () => {
+            const subjects = [
+                { id_asignatura: 1, nombre: 'Materia 1' },
+                { id_asignatura: 2, nombre: 'Materia 2' },
+                { id_asignatura: 3, nombre: 'Materia 3' }
+            ];
+            const subjectSelect = document.getElementById('subjectSelect');
+            subjects.forEach(subject => {
+                const option = document.createElement('option');
+                option.text = subject.nombre;
+                option.value = subject.id_asignatura;
+                subjectSelect.appendChild(option);
+            });
+        };
+
+        // Función para agregar un mensaje al contenedor de mensajes
+        const addMessage = (message) => {
+            const messageContainer = document.getElementById('messageContainer');
+            const messageElement = document.createElement('div');
+            messageElement.textContent = message;
+            messageContainer.appendChild(messageElement);
+        };
+
+        // Conectar al servidor de Socket.io
+        const socket = io('http://localhost:3000');
+
+        // Escuchar mensajes del servidor
+        socket.on('message', handleMessage);
+
+        // Manejar mensajes recibidos del servidor
+        function handleMessage(message) {
+            addMessage(message);
+        }
+
+        // Enviar mensaje al servidor al hacer clic en el botón
+        document.getElementById('sendMessageButton').addEventListener('click', () => {
+            const input = document.getElementById('messageInput');
+            const message = input.value;
+            if (message.trim() !== '') {
+                socket.emit('message', message);
+                input.value = '';
+            }
+        });
+
+        // Enviar comentario al servidor y a la base de datos al hacer clic en el botón
+        document.getElementById('sendCommentButton').addEventListener('click', () => {
+            const studentSelect = document.getElementById('studentSelect');
+            const selectedStudent = studentSelect.options[studentSelect.selectedIndex].value;
+            const messageInput = document.getElementById('messageInput');
+            const input = messageInput.value;
+            if (selectedStudent !== '' && input.trim() !== '') {
+                const comment = `Comentario para ${selectedStudent}: ${input}`;
+                socket.emit('comment', comment);
+
+                // Enviar comentario a la base de datos
+                fetch('http://localhost:3000/comentario', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ comentario: comment })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error('Error al enviar el comentario:', error));
+
+                messageInput.value = '';
+            }
+        });
+
+        // Crear opciones de alumnos y asignaturas al cargar la página
+        window.onload = () => {
+            createStudentOptions();
+            createSubjectOptions();
+        };
+    </script>
+</body>
+</html>

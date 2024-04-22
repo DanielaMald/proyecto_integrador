@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>visitantes</title>
+    <script type="text/javascript" src="../static/js/get_all.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Asignaturas</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+      
+    <style>
+        /* Estilos para la barra de navegación */
+.site-header nav {
+    display: flex;
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 80px; /* Altura de la barra de navegación */
+    background-color: #025188; /* Fondo de barra azul */
+    margin-bottom: 20px; /* Agregamos margen inferior */
+    width: 100%; /* Ancho al 100% */
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-header nav ul li {
+    margin-right: 20px; /* Aumentamos el espacio entre elementos */
+}
+
+/* Estilos para los botones */
+.button {
+    position: relative;
+    height: 50px; /* Mantenemos la altura */
+    background-color: #4C82BD;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0 20px; /* Ajustamos el espacio de padding horizontal */
+    gap: 10px; /* Espacio entre los elementos internos */
+    border-radius: 25px; /* Reducimos el radio de borde */
+    cursor: pointer;
+    font-size: 20px; /* Mantenemos el tamaño del texto */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    display: flex-direction;
+    align-items: center; /* Centramos verticalmente dentro del botón */
+}
+
+.button:hover {
+    background-color: #366FA2; /* Cambiamos el color de fondo al pasar el cursor */
+}
+
+.button span {
+    text-transform: uppercase; /* Convertimos el texto en mayúsculas */
+    letter-spacing: 1px; /* Ajustamos el espaciado entre letras */
+}
+
+/* Eliminar margen lateral predeterminado */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+        .options {
+            display: flex;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body style="background-color: #182f53;">
+    <h1 style="color:white;" >visitantes</h1>
+    <a href="buscar"><button class="button">Buscar visitante</button></a>    
+    <a href="visitantes"><button class="button">Insertar</button></a>
+    <a href="#" id="cerrarSesion"><button class="button" onclick="cerrarSesion()">regresar a inicio</button></a>
+    <a href="#" ><button class="button" onclick="gps()">gps1</button></a>
+
+    <br><br>
+    <table class="table table-striped" bgcolor="3FABAF">
+    <thead id="thead_visitantes">
+            <th>Nombre</th>
+            <th>Apellido1</th>
+            <th>Apellido2</th>
+            <th>Motivo</th>
+            <th>Dispositivo</th>
+            <th>entrada</th>
+            <th>salida</th>
+            <th>Acciones</th>
+        </thead>
+        <tbody id="tbody_visitantes">
+        </tbody>
+    </table>
+    <script>
+        document.body.onload = getAll();
+    </script>
+</body>
+</html>

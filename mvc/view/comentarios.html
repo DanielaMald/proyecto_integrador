@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dejar Comentario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+        form textarea {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        form input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+         /* Estilos para el botón de regreso */
+        .back-btn {
+            background-color: #9c9fa2;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .back-btn:hover {
+            background-color: #065b8c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Dejar Comentario a Alumno</h2>
+        <form id="comentarioForm">
+            <!-- Campos del formulario -->
+            <input type="hidden" id="clave_profesor" name="clave_profesor" value="ClaveDeProfesorAqui">
+            <input type="hidden" id="matricula" name="matricula">
+            <input type="hidden" id="id_asignatura" name="id_asignatura">   
+            <input type="hidden" id="id_grupo" name="id_grupo">
+            
+            <label for="materia">Selecciona una Materia:</label>
+            <select id="materia" name="materia" onchange="cargarGrupos()">
+                <option value="">Selecciona una materia...</option>
+                <!-- Las opciones de materia se cargarán dinámicamente mediante la solicitud AJAX -->
+            </select><br><br>
+
+            
+            <label for="grupo">Selecciona un Grupo:</label>
+            <select id="grupo" name="grupo" onchange="cargarAlumnos(); capturarIdGrupo()">
+                <!-- Los grupos se cargarán dinámicamente según la materia seleccionada -->
+            </select><br><br>
+            
+            <label for="alumno">Selecciona un Alumno:</label>
+            <select id="alumno" name="alumno" required onchange="capturarMatricula()">
+                <!-- Los alumnos se cargarán dinámicamente según el grupo seleccionado -->
+            </select><br><br>            
+            
+            <label for="comentario">Comentario:</label><br>
+            <textarea id="comentario" name="comentario" rows="4" cols="50" required></textarea><br><br>
+            <button type="submit" class="back-btn">Enviar Comentario</button>
+            <a href="profesores/index.html" class="back-btn">Regresar al Inicio</a>
+        </form>
+    </div>
+
+    <script>
+        function cargarMaterias() {
+            // Realizar solicitud AJAX para cargar las materias disponibles
+            fetch('cargarMaterias.php')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("materia").innerHTML = data; // Insertar opciones de materias en el select
+            })
+            .catch(error => console.error('Error al cargar materias:', error));
+        }
+
+        function cargarGrupos() {
+            var materiaSeleccionada = document.getElementById("materia").value;
+
+            // Realizar solicitud AJAX para cargar los grupos asociados a la materia seleccionada
+            fetch('cargarGrupos.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                body: 'materia=' + materiaSeleccionada
+            })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("grupo").innerHTML = data; // Insertar opciones de grupos en el select
+                cargarAlumnos(); // Cargar alumnos una vez que se han cargado los grupos
+                capturarIdAsignatura(); // Capturar el ID de la asignatura seleccionada
+            })
+            .catch(error => console.error('Error al cargar grupos:', error));
+        }
+
+
+        function cargarAlumnos() {
+            var grupoSeleccionado = document.getElementById("grupo").value;
+
+            // Realizar solicitud AJAX para cargar los alumnos del grupo seleccionado
+            fetch('cargarAlumnos.php?id_grupo=' + grupoSeleccionado)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("alumno").innerHTML = data; // Insertar opciones de alumnos en el select
+            })
+            .catch(error => console.error('Error al cargar alumnos:', error));
+        }
+        
+        // Función para capturar la matrícula del alumno seleccionado
+        function capturarMatricula() {
+            var select = document.getElementById("alumno");
+            var matricula = select.options[select.selectedIndex].getAttribute("data-matricula");
+            document.getElementById("matricula").value = matricula;
+        }   
+
+        // Función para capturar el ID del grupo seleccionado
+        function capturarIdGrupo() {
+            var select = document.getElementById("grupo");
+            var idGrupo = select.options[select.selectedIndex].value; // Obtener el valor seleccionado
+            console.log("ID del Grupo seleccionado:", idGrupo); // Agregar este console.log para depuración
+            document.getElementById("id_grupo").value = idGrupo; // Asignar el valor al campo oculto
+        }
+
+
+        // Función para capturar el ID de la asignatura seleccionada
+        function capturarIdAsignatura() {
+            var select = document.getElementById("materia");
+            var idAsignatura = select.value;
+            document.getElementById("id_asignatura").value = idAsignatura;
+        }
+
+        document.getElementById('comentarioForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar el envío del formulario por defecto
+            
+            // Obtener los datos del formulario
+            var formData = new FormData(this);
+            console.log(formData); // Mostrar datos del formulario en la consola para depuración
+
+            // Realizar la solicitud AJAX
+            fetch('procesar_comentario.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Mostrar la respuesta del servidor en la consola del navegador para depurar
+                console.log(data);
+                // Si se muestra un fragmento de HTML, puede indicar un error en el script PHP
+                // Si no se muestra nada, puede indicar un error en el código JavaScript o la solicitud AJAX
+                alert(data); // Puedes mostrar la respuesta en un mensaje de alerta si lo prefieres
+                // Aquí puedes realizar otras acciones, como actualizar la interfaz de usuario, etc.
+            })
+            .catch(error => console.error('Error al enviar comentario:', error));
+        });
+
+        // Cargar las materias al cargar la página
+        cargarMaterias();
+        cargarAlumnos(); // Cargar alumnos al cargar la página (para evitar errores si no se selecciona una materia)
+        cargarGrupos();
+    </script>
+
+</body>
+</html>

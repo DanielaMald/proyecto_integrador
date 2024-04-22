@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../../styles/g2.css">
+    <link rel="stylesheet" href="../../styles/formulario.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Registro</title>
+</head>
+<body>
+    <div class="site-header">
+        <div id="desk">
+            <div class="site-identity"></div>
+            <nav>
+                <ul class="button-list">
+                    <li><button class="button" onclick="window.location.href='admin.html'">Inicio</button></li>
+                    <li><button class="button" onclick="window.location.href='logout.php'">Salir</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <h2 style="color: white;">Formulario del Administrador</h2>
+    <form action="../../controller/administrador/nuevo_profesor.php" method="post" class="formulario2">
+        
+        <label for="clave" style="color: black;">Clave Profesor:</label>
+        <input type="number" id="clave" name="clave" required><br>
+
+        <label for="nombre" style="color: black;">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="ap_paterno" style="color: black;">Apellido Paterno:</label>
+        <input type="text" id="ap_paterno" name="ap_paterno" required><br>
+
+        <label for="ap_materno" style="color: black;">Apellido Materno:</label>
+        <input type="text" id="ap_materno" name="ap_materno" required><br>
+
+        <label for="correo" style="color: black;">Correo electronico:</label>
+        <input type="email" id="correo" name="correo" required><br>
+
+        <label for="contrasena" style="color: black;">Contrasena:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br>
+
+        <input type="submit" value="Enviar" style="background-color: #3FABAF; color: white;">
+
+    </form>
+</body>
+</html>

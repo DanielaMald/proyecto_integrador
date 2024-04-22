@@ -1,0 +1,68 @@
+/* Estilos del formulario */
+body {
+    align-items: center;
+    background: #83B5F1;
+    background: ( #83B5F1);
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+.formulario2 {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff; /* Color de fondo del formulario */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .formulario2 label {
+    display: block;
+    margin-bottom: 10px;
+    color: #333; /* Color del texto de la etiqueta */
+  }
+  
+  .formulario2 input[type="text"],
+  .formulario2 input[type="email"],
+  .formulario2 input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc; /* Borde del campo de entrada */
+    border-radius: 5px; /* Borde redondeado */
+    box-sizing: border-box;
+  }
+  
+  .formulario2 input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px; /* Borde redondeado */
+    background-color: #3FABAF; /* Color de fondo del botón de enviar */
+    color: #fff; /* Color del texto del botón de enviar */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transición suave */
+  }
+  
+  .formulario2 input[type="submit"]:hover {
+    background-color: #366FA2; /* Cambio de color al pasar el cursor */
+  }
+  
+  .content {
+    display: flex; /* Usar flexbox */
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 100vh; /* Establecer la altura al 100% del viewport */
+    flex-direction: column; /* Apilar los elementos verticalmente */
+    font-family: Arial, sans-serif; /* Fuente */
+    color: white; /* Color del texto */
+  }
+  
+  .content p {
+    font-size: 20px; /* Tamaño de la fuente */
+    line-height: 1.5; /* Espacio entre líneas */
+    text-align: center; /* Centrar el texto horizontalmente */
+    color: white;
+  }
+  

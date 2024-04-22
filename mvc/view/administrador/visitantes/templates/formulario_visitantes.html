@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VISITANTES</title>
+<style>
+    body {
+        background-color: #182f53;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #83B5F1;
+        padding: 20px;
+        border-radius: 12px; /* Hacemos los bordes un poco más redondos */
+        box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.1);
+    }
+    h2 {
+        color: white;
+        text-align: center;
+    }
+    input[type="text"], input[type="time"], textarea, input[type="date"] {
+        width: 100%;
+        padding: 10px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 8px; /* Hacemos los bordes de los campos de entrada más redondos */
+    }
+    input[type="submit"] {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 15px; /* Hacemos el botón de registrar un poco más pequeño */
+        border: none;
+        border-radius: 8px; /* Hacemos los bordes del botón más redondos */
+        cursor: pointer;
+        width: 100%;
+        margin-top: 10px; /* Agregamos un espacio entre los campos de entrada y el botón */
+    }
+    input[type="submit"]:hover {
+        background-color: #84b6f4;
+    }
+    .button {
+        position: relative;
+        height: 30px; /* Mantenemos la altura */
+        background-color: #4C82BD;
+        color: rgb(255, 255, 255);
+        border: none;
+        padding: 0 10px; /* Ajustamos el espacio de padding horizontal */
+        gap: 10px; /* Espacio entre los elementos internos */
+        border-radius: 15px; /* Reducimos el radio de borde */
+        cursor: pointer;
+        font-size: 20px; /* Mantenemos el tamaño del texto */
+        font-weight: bold;
+        transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+        display: flex-direction;
+        align-items: center; /* Centramos verticalmente dentro del botón */
+    }
+    
+    .button:hover {
+        background-color: #366FA2; /* Cambiamos el color de fondo al pasar el cursor */
+    }
+    
+    .button span {
+        text-transform: uppercase; /* Convertimos el texto en mayúsculas */
+        letter-spacing: 1px; /* Ajustamos el espaciado entre letras */
+    }
+    
+</style>
+</head>
+<body>
+    <form action="#" method="post">
+        <h1>Insertar contacto</h1>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+        <label for="appaterno">Apellido Paterno:</label>
+        <input type="text" id="appaterno" name="appaterno" required>
+        <label for="apmaterno">Apellido Materno:</label>
+        <input type="text" id="apmaterno" name="apmaterno" required>
+        <label for="Motivo">Motivo:</label>
+        <input type="text" id="motivo" name="motivo" required>
+        <label for="dispositivo">dispositivo:</label>
+        <input type="text" id="dispositivo" name="dispositivo" value="gps1" readonly>
+        
+        <button type="button" class="button" onclick="insertar()">Insertar</button>
+        <button type="button" class="button" onclick="cancelar()">Cancelar</button>
+    </form>
+
+    <script type="text/javascript" src="../static/js/insertar.js"></script>
+</body>
+
+</html>

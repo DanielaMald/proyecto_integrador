@@ -1,0 +1,104 @@
+/* Estilos generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    min-height: 100vh;
+    background: #83B5F1;
+    font-family: "Fira Sans", Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.site-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* Reducimos el espacio de padding */
+    color: #ffffff;
+    background-color: #83B5F1;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+
+/* Estilos para la barra de navegación */
+.site-header nav {
+    display: flex;
+    justify-content: flex-start; /* Alineamos los elementos hacia el inicio */
+    align-items: center;
+    width: 100%;
+    overflow-x: auto; /* Agregar desplazamiento horizontal */
+    background-color: #025188; /* Fondo estático */
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-header nav ul li {
+    margin-right: 10px;
+}
+
+.button {
+    position: relative;
+    width: 120px; /* Reducimos el ancho */
+    height: 50px; /* Reducimos la altura */
+    background-color: #4C82BD;
+    display: flex;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+    justify-content: center;
+    border: none;
+    padding: 20px; /* Reducimos el espacio de padding */
+    gap: 10px; /* Reducimos el espacio entre los elementos internos */
+    border-radius: 30px; /* Reducimos el radio de borde */
+    cursor: pointer;
+    font-size: 16px; /* Reducimos el tamaño del texto */
+    font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+    .button {
+        width: 120px; /* Reducir el ancho de los botones */
+        height: 40px; /* Reducir la altura de los botones */
+        font-size: 14px; /* Reducir el tamaño de fuente de los botones */
+        padding: 10px; /* Reducir el espaciado interno de los botones */
+    }
+}
+
+
+/* Estilos para EL contenido */
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+}
+
+.content h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    font-size: 32px; /* Reducimos el tamaño del título */
+    margin: 0;
+}
+
+.content h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 18px; /* Reducimos el tamaño del texto */
+    margin: 20px 0;
+}

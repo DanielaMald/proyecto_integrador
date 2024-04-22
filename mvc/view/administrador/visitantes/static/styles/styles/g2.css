@@ -1,0 +1,54 @@
+/* Estilos para la barra de navegación */
+.site-header nav {
+    display: flex;
+    justify-content: center; /* Centramos horizontalmente */
+    align-items: center; /* Centramos verticalmente */
+    height: 80px; /* Altura de la barra de navegación */
+    background-color: #025188; /* Fondo de barra azul */
+    margin-bottom: 20px; /* Agregamos margen inferior */
+    width: 100%; /* Ancho al 100% */
+}
+
+.site-header nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.site-header nav ul li {
+    margin-right: 20px; /* Aumentamos el espacio entre elementos */
+}
+
+/* Estilos para los botones */
+.button {
+    position: relative;
+    height: 50px; /* Mantenemos la altura */
+    background-color: #4C82BD;
+    color: rgb(255, 255, 255);
+    border: none;
+    padding: 0 20px; /* Ajustamos el espacio de padding horizontal */
+    gap: 10px; /* Espacio entre los elementos internos */
+    border-radius: 25px; /* Reducimos el radio de borde */
+    cursor: pointer;
+    font-size: 20px; /* Mantenemos el tamaño del texto */
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Transición suave de color de fondo */
+    display: flex;
+    align-items: center; /* Centramos verticalmente dentro del botón */
+}
+
+.button:hover {
+    background-color: #366FA2; /* Cambiamos el color de fondo al pasar el cursor */
+}
+
+.button span {
+    text-transform: uppercase; /* Convertimos el texto en mayúsculas */
+    letter-spacing: 1px; /* Ajustamos el espaciado entre letras */
+}
+
+/* Eliminar margen lateral predeterminado */
+body, html {
+    margin: 0;
+    padding: 0;
+}
